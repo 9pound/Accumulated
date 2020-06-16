@@ -4,11 +4,11 @@
 
 #### 什么是面向对象
 
-面向对象、面向过程
+[面向对象、面向过程](https://github.com/9pound/Accumulate/blob/master/Java-basic/1%E3%80%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%81%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B.md)
 
-面向对象的三大基本特征和五大基本原则
+[面向对象的三大基本特征和五大基本原则](https://github.com/9pound/Accumulate/blob/master/Java-basic/%E4%BA%94%E5%A4%A7%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99.md)
 
-对象的基本特征和对象之间的关系
+[对象的基本特征和对象之间的关系](https://github.com/9pound/Accumulate/blob/master/Java-basic/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81.md)
 
 
 
@@ -20,7 +20,7 @@ JVM还支持哪些语言（Kotlin、Groovy、JRuby、Jython、Scala）
 
 #### 值传递
 
-值传递、引用传递
+[值传递、引用传递](https://github.com/9pound/Accumulate/blob/master/Java-basic/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92.md)
 
 为什么说Java中只有值传递
 
@@ -378,9 +378,17 @@ JIT、JIT优化（逃逸分析、栈上分配、标量替换、锁优化）
 
 设计模式的六大原则：
 
-开闭原则（Open Close Principle）、里氏代换原则（Liskov Substitution Principle）、依赖倒转原则（Dependence Inversion Principle）
+开闭原则（Open Close Principle）、
 
-接口隔离原则（Interface Segregation Principle）、迪米特法则（最少知道原则）（Demeter Principle）、合成复用原则（Composite Reuse Principle）
+里氏代换原则（Liskov Substitution Principle）、
+
+依赖倒转原则（Dependence Inversion Principle）
+
+接口隔离原则（Interface Segregation Principle）、
+
+迪米特法则（最少知道原则）（Demeter Principle）、
+
+合成复用原则（Composite Reuse Principle）
 
 #### 了解23种设计模式
 
@@ -397,10 +405,6 @@ JIT、JIT优化（逃逸分析、栈上分配、标量替换、锁优化）
 工厂模式、适配器模式、策略模式、模板方法模式、观察者模式、外观模式、代理模式等必会
 
 #### 不用synchronized和lock，实现线程安全的单例模式
-
-#### 实现AOP
-
-#### 实现IOC
 
 #### nio和reactor设计模式
 
@@ -473,6 +477,8 @@ Hibernate的懒加载
 Hibernate/Ibatis/MyBatis之间的区别
 
 #### Spring
+
+IOC
 
 Bean的初始化
 
@@ -696,7 +702,25 @@ h2
 
 #### 常用的nosql数据库
 
-redis、memcached
+**redis**
+
+Redis是什么？ 与memcached有什么区别？
+
+Redis的五种数据结构(STRING、LIST、SET、HASH、ZSET)及常用命令
+
+如何将数据存储到硬盘里面？快照、只追加文件
+
+主从复制特性（避免对主服务器进行集中式访问）
+
+维护数据安全以及应对系统故障的方法
+
+同时使用复制和持久化的好处和坏处？
+
+如何去选择适合自己的持久化选项和复制选项？
+
+Redis的事务特性和流水线特性
+
+
 
 #### 分别使用数据库锁、NoSql实现分布式锁
 
