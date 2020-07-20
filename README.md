@@ -36,7 +36,9 @@ Java的继承与实现
 
 成员变量和方法作用域
 
-### Java基础知识
+接口和抽象类
+
+### Java基础知识  
 
 #### 基本数据类型
 
@@ -496,9 +498,13 @@ Spring mvc与Struts mvc的区别
 
 #### Spring Boot
 
-Spring Boot 2.0、起步依赖、自动配置、
+Spring Boot 2.0、起步依赖、自动配置
 
 Spring Boot的starter原理，自己实现一个starter
+
+@SpringBootApplication
+
+测试@SpringApplicationConfiguration
 
 #### Spring Security
 
@@ -827,6 +833,8 @@ memcached为什么可以导致DDos攻击、什么是反射型DDoS
 ## 五、架构篇
 
 ### 分布式
+
+CAP和BASE理论
 
 数据一致性、服务治理、服务降级
 
