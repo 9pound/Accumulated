@@ -1,0 +1,3 @@
+# @SpringApplicationConfiguration
+
+Spring集成测试用的是 @ContextConfiguration
