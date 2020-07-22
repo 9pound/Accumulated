@@ -10,8 +10,6 @@
 
 [对象的基本特征和对象之间的关系](https://github.com/9pound/Accumulate/blob/master/Java-basic/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81.md)
 
-
-
 #### 平台无关性
 
 Java如何实现的平台无关
@@ -26,7 +24,7 @@ JVM还支持哪些语言（Kotlin、Groovy、JRuby、Jython、Scala）
 
 #### 封装、继承、多态
 
-什么是多态、方法重写与重载
+[什么是多态、方法重写与重载](https://github.com/9pound/Accumulate/blob/master/Java-basic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%80%81%E3%80%81%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E3%80%81.md)
 
 Java的继承与实现
 
@@ -36,23 +34,23 @@ Java的继承与实现
 
 成员变量和方法作用域
 
-接口和抽象类
+[接口和抽象类](https://github.com/9pound/Accumulate/blob/master/Java-basic/%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB.md)
 
 ### Java基础知识  
 
 #### 基本数据类型
 
-7种基本数据类型：整型、浮点型、布尔型、字符型
+[8种基本数据类型：整型、浮点型、布尔型、字符型(void也是基本类型)](https://github.com/9pound/Accumulate/blob/master/Java-basic/8%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%884%E7%A7%8D%E6%95%B4%E5%9E%8B%EF%BC%8C2%E7%A7%8D%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B%EF%BC%8C1%E7%A7%8D%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%EF%BC%89.md)
 
 整型中byte、short、int、long的取值范围
 
 什么是浮点型？什么是单精度和双精度？为什么不能用浮点型表示金额？
 
-#### 自动拆装箱
+什么自动拆装箱？
 
 什么是包装类型、什么是基本类型、什么是自动拆装箱
 
-Integer的缓存机制
+基本类型的缓存机制（常量池技术）
 
 #### String
 
@@ -76,21 +74,39 @@ transient、instanceof、volatile、synchronized、final、static、const 原理
 
 #### 集合类
 
-常用集合类的使用、ArrayList和LinkedList和Vector的区别 、SynchronizedList和Vector的区别、HashMap、HashTable、ConcurrentHashMap区别、
-
-Set和List区别？Set如何保证元素不重复？
-
-Java 8中stream相关用法、apache集合处理工具类的使用、不同版本的JDK中HashMap的实现的区别以及原因
-
 Collection和Collections区别
 
 Arrays.asList获得的List使用时需要注意什么
 
+Collection、List、Set、Map、Queue、Stack
+
+ArrayList和LinkedList和Vector的区别？
+
+HashMap与HashTable的区别？
+
+HashMap与HashSet的区别？
+
+ConcurrentHashMap和HashTable的区别？
+
+HashSet如何保证元素不重复？
+
+
+
+SynchronizedList和Vector的区别
+
+HashMap、HashTable、ConcurrentHashMap区别、
+
+不同版本的JDK中HashMap的实现的区别以及原因
+
+CopyOnWriteArrayList、 
+
 Enumeration和Iterator区别
 
-fail-fast 和 fail-safe
+Java 8中stream相关用法、
 
-CopyOnWriteArrayList、ConcurrentSkipListMap
+apache集合处理工具类的使用
+
+fail-fast 和 fail-safe
 
 #### 枚举
 
@@ -240,9 +256,11 @@ String、Integer、Long、Enum、BigDecimal、ThreadLocal、ClassLoader & URLCla
 
 #### 线程
 
+线程与进程的区别
+
 线程的实现、线程的状态、优先级、线程调度、创建线程的多种方式、守护线程
 
-线程与进程的区别
+
 
 #### 线程池
 
@@ -380,17 +398,18 @@ JIT、JIT优化（逃逸分析、栈上分配、标量替换、锁优化）
 
 设计模式的六大原则：
 
-开闭原则（Open Close Principle）、
+- 开闭原则（Open Close Principle）
 
-里氏代换原则（Liskov Substitution Principle）、
+- 里氏代换原则（Liskov Substitution Principle）
 
-依赖倒转原则（Dependence Inversion Principle）
+- 依赖倒转原则（Dependence Inversion Principle）
 
-接口隔离原则（Interface Segregation Principle）、
+- 接口隔离原则（Interface Segregation Principle）
 
-迪米特法则（最少知道原则）（Demeter Principle）、
+- 迪米特法则（最少知道原则）（Demeter Principle）
 
-合成复用原则（Composite Reuse Principle）
+- 合成复用原则（Composite Reuse Principle）
+
 
 #### 了解23种设计模式
 
