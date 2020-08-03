@@ -1,6 +1,6 @@
 # @SpringBootApplication
 
-作用：开启组件扫描，和自动配置功能
+作用：开启组件扫描，和自动配置功能，由下面三个注解构成
 
 - @Configureation  该类使用基于Java的配置
 - @ComponentScan  启用组件扫描
