@@ -56,6 +56,8 @@ Java的继承与实现
 
 字符串的不可变性
 
+String常用的方法
+
 JDK 6和JDK 7中substring的原理及区别、
 
 replaceFirst、replaceAll、replace区别、
@@ -89,8 +91,6 @@ HashMap与HashSet的区别？
 ConcurrentHashMap和HashTable的区别？
 
 HashSet如何保证元素不重复？
-
-
 
 SynchronizedList和Vector的区别
 
@@ -145,8 +145,6 @@ java.lang.reflect.*
 动态代理和反射的关系
 
 动态代理的几种实现方式
-
-AOP
 
 #### 序列化
 
@@ -258,11 +256,21 @@ String、Integer、Long、Enum、BigDecimal、ThreadLocal、ClassLoader & URLCla
 
 线程与进程的区别
 
-线程的实现、线程的状态、优先级、线程调度、创建线程的多种方式、守护线程
+线程的实现
 
+线程的状态
 
+优先级
+
+线程调度
+
+创建线程的多种方式
+
+守护线程
 
 #### 线程池
+
+
 
 自己设计线程池、submit() 和 execute()、线程池原理
 
@@ -326,25 +334,51 @@ Thread、Runnable、Callable、ReentrantLock、ReentrantReadWriteLock、Atomic*�
 
 #### JVM内存结构
 
-class文件格式、运行时数据区：堆、栈、方法区、直接内存、运行时常量池、
+[运行时数据区：堆、栈、方法区、直接内存、运行时常量池](https://github.com/9pound/Accumulate/blob/master/jvm/Jvm%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.xmind)
 
 堆和栈区别
 
-Java中的对象一定在堆上分配吗？
+Java中的对象一定在堆上分配吗？不一定（hotspot 的Class对象存放在方法区）
+
+[对象的创建过程](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.xmind)
+
+[对象的内存布局](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.xmind)
+
+#### 垃圾回收
+
+[对象的访问定位](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D.md)
+
+如何判断对象死没死（引用计数、可达性分析）
+
+[垃圾收集算法：标记清除、引用计数、复制、标记压缩、分代回收、增量式回收](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95.xmind)
+
+垃圾收集器（CMS、G1、ZGC、Epsilon）
+
+GC参数总结
+
+[内存分配与回收策略](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5.xmind)
+
+#### 类文件结构
+
+class文件格式
+
+#### 虚拟机类加载机制
+
+类加载的时机
+
+类的加载过程（加载、验证、准备、解析、初始化）
+
+[类加载器、双亲委派模型、OGSI](https://github.com/9pound/Accumulate/blob/master/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.md)
 
 #### Java内存模型
 
 计算机内存模型、缓存一致性、MESI协议
 
-可见性、原子性、顺序性、happens-before、
+可见性、原子性、顺序性、
+
+happens-before（先行发生原则）
 
 内存屏障、synchronized、volatile、final、锁
-
-#### 垃圾回收
-
-GC算法：标记清除、引用计数、复制、标记压缩、分代回收、增量式回收
-
-GC参数、对象存活的判定、垃圾收集器（CMS、G1、ZGC、Epsilon）
 
 #### JVM参数及调优
 
@@ -497,35 +531,134 @@ Hibernate的懒加载
 
 Hibernate/Ibatis/MyBatis之间的区别
 
+#### Mybatis
+
+常用标签，[常用注解](https://github.com/9pound/Accumulate/blob/master/mybatis/Mybatis%20%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3.md)
+
+[动态SQL](https://github.com/9pound/Accumulate/blob/master/mybatis/%E5%8A%A8%E6%80%81SQL.md)
+
+如何重数据库中返回自增ID
+
+[mapper接口和xml文件是如何关联的？接口中的方法和xml文件中的sql语句是如何关联的？不同XML文件中id是否可以重复？](https://github.com/9pound/Accumulate/blob/master/mybatis/mapper%E6%8E%A5%E5%8F%A3%E5%92%8Cxml%E6%96%87%E4%BB%B6%E6%98%AF%E5%A6%82%E4%BD%95%E5%85%B3%E8%81%94%E7%9A%84%EF%BC%9F%E6%8E%A5%E5%8F%A3%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8Cxml%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84sql%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%A6%82%E4%BD%95%E5%85%B3%E8%81%94%E7%9A%84%EF%BC%9F.md)
+
+[数据库表字段和Java类属性字段名不匹配如何解决？](https://github.com/9pound/Accumulate/blob/master/mybatis/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E5%92%8CJava%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%AD%97%E6%AE%B5%E5%90%8D%E4%B8%8D%E5%8C%B9%E9%85%8D%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F.md)
+
+#{}与${}的区别？
+
+动态Sql的原理？
+
+动态代理的原理？
+
+[Mybatis延迟加载](https://github.com/9pound/Accumulate/blob/master/mybatis/%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD.md)
+
+[一对一、一对多映射如何实现？](https://github.com/9pound/Accumulate/blob/master/mybatis/%E6%98%A0%E5%B0%84.md)
+
+[鉴别器映射](https://github.com/9pound/Accumulate/blob/master/mybatis/%E9%89%B4%E5%88%AB%E5%99%A8%E6%98%A0%E5%B0%84.md)
+
+[二级缓存](https://github.com/9pound/Accumulate/blob/master/mybatis/%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98.md)
+
 #### Spring
+
+什么是Spring
+
+资源访问Resource
+
+[核心接口BeanFactory、ApplicationContext、WebApplicationContext](https://github.com/9pound/Accumulate/blob/master/spring/Spring%E6%A0%B8%E5%BF%83%E6%8E%A5%E5%8F%A3.md)
+
+Bean的生命周期14步
 
 IOC
 
-Bean的初始化
+[依赖注入的三种方式](https://github.com/9pound/Accumulate/blob/master/spring/IOC%E7%B1%BB%E5%9E%8B.md)
 
-AOP原理
+[自动装配的类型](https://github.com/9pound/Accumulate/blob/master/spring/%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E7%B1%BB%E5%9E%8B.md)
+
+[Bean的作用域](https://github.com/9pound/Accumulate/blob/master/spring/Bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
 
 实现Spring的IOC
 
-spring四种依赖注入方式
+AOP
+
+[Spring Aop 和AspectJ Aop 有什么区别？](https://github.com/9pound/Accumulate/blob/master/spring/Spring%20Aop%20%E5%92%8CAspectJ%20Aop%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+
+[JDK动态代理与CGLib代理有什么区别？](https://github.com/9pound/Accumulate/blob/master/spring/JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8ECGLib%E4%BB%A3%E7%90%86%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+
+[Spring事务](https://github.com/9pound/Accumulate/blob/master/spring/Spring%E4%BA%8B%E5%8A%A1.md)
+
+数据库事务的特性ACID
+
+[并发问题（五种读）](https://github.com/9pound/Accumulate/blob/master/spring/%E4%BA%94%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98.md)
+
+[事务的隔离级别](https://github.com/9pound/Accumulate/blob/master/spring/%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.md)
+
+Spring如何使用ThreadLocal解决线程安全问题？
+
+- 一般情况下，从接受请求到返回响应所经过的所有程序调用都属于同一个线程
+
+- ThreadLocal：为不同的事务线程提供独立的资源副本
+
+
+事务管理器
+
+[事务的传播行为](https://github.com/9pound/Accumulate/blob/master/spring/%E4%BA%8B%E5%8A%A1%E7%9A%84%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA.md)
+
+[Spring如何进行事务管理？](https://github.com/9pound/Accumulate/blob/master/spring/Spring%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%EF%BC%9F.md)
+
+@Transactional注解
+
+Spring中用到的设计模式
 
 #### Spring MVC
 
-什么是MVC
+什么是MVC模式、简单谈谈你对 MVC 的理解
 
-Spring mvc与Struts mvc的区别
+SpringMVC工作原理（7步）
+
+参数绑定
+
+说说你对自定义数据类型转换器的理解。
+
+ Spring MVC 怎么样设定重定向和转发的？
+
+@Contorller与@RestController 的区别
+
+@ModelAttribute 注解应该如何使用？
+
+@ResponseEntity
+
+@PathVariable@MatrixVariable
+
+@RequestParam
+
+@CookieValue
+
+@RequestHeader
+
+参数绑定到对象、ServletAPI作为入参、IO对象做入参
+
+HttpMessageConverter
+
+文件上传
+
+静态资源处理
+
+异常处理
+
+
+
+
+
+如何解决 POST 请求和 GET 请求的中文乱码问题？
 
 #### Spring Boot
 
-Spring Boot 2.0、起步依赖、自动配置
+[Spring Boot 2.0、起步依赖、自动配置](https://github.com/9pound/Accumulate/blob/master/spring-boot/SpringBoot.md)
+
+[@SpringBootApplication 注解](https://github.com/9pound/Accumulate/blob/master/spring-boot/%40SpringBootApplication%E6%B3%A8%E8%A7%A3.md)
+
+[自动配置的原理](https://github.com/9pound/Accumulate/blob/master/spring-boot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8E%9F%E7%90%86.md)
 
 Spring Boot的starter原理，自己实现一个starter
-
-@SpringBootApplication
-
-测试@SpringApplicationConfiguration
-
-#### Spring Security
 
 ### Spring Cloud
 
@@ -540,6 +673,48 @@ Spring Boot的starter原理，自己实现一个starter
 服务链路追踪：Dapper
 
 服务网关、安全、消息
+
+什么是 Spring Cloud？
+
+Spring Cloud 和 Spring 之间有什么关联关系？
+
+Spring Cloud 实现服务注册和发现的原理是什么？
+
+ Ribbon 和 Feign 有什么区别？
+
+为什么要使用 Spring Cloud 熔断器，它的作用是什么？
+
+什么是 Hystrix？
+
+Eureka 和 ZooKeeper 有哪些区别？
+
+为什么要使用负载均衡？
+
+Spring Cloud 实现服务注册和发现的具体流程是什么？
+
+为什么要使用 Spring Cloud ，它有哪些优势？
+
+谈谈你对微服务的理解。
+
+微服务分别有哪些优点，哪些缺点？
+
+谈谈微服务之间是如何实现通信的。
+
+Spring Boot 如何集成 MyBatis？
+
+Spring Boot 和 Spring Cloud 有哪些区别？
+
+使用 layui 的数据表格组件展示业务数据，后台实体类应该如何定义
+
+JPA 和 Spring Data JPA 是一回事吗？
+
+如果要给项目添加权限管理系统，一般包含哪些需求？
+
+微服务架构的拆分都有哪些原则？
+
+Feign 和 Ribbon+RestTemplate 的区别是什么？
+
+### Spring Security
 
 ### 应用服务器知识
 
