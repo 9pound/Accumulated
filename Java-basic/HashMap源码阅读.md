@@ -235,11 +235,12 @@ final Node<K,V>[] resize() {
                      oldCap >= DEFAULT_INITIAL_CAPACITY)
                 newThr = oldThr << 1; // double threshold
         }
-    	// 2、如果旧数组中的有元素
+    	// 2、如果旧数组的长度小于或等于零，threshold大于零，那么新数组的大小为就的Threshold
         else if (oldThr > 0) // initial capacity was placed in threshold
             // 新数组的大小
             newCap = oldThr;
         else {               // zero initial threshold signifies using defaults
+            //3、旧数组的长度小于等于零，且threshold也小于等于零，初始化
             newCap = DEFAULT_INITIAL_CAPACITY;
             newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
         }
@@ -306,9 +307,11 @@ final Node<K,V>[] resize() {
 
 那HashMap是线程安全的吗，怎么解决这个线程不安全的问题？
 
+​		HashTable、Collections.synchronizedMap、以及ConcurrentHashMap
+
 HashMap内部节点是有序的吗？
 
-
+keySet()，values（），entirySet（）
 
 
 

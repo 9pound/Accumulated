@@ -240,17 +240,29 @@ Java中语法糖原理、解语法糖
 
 ### 阅读源代码
 
-String、Integer、Long、Enum、BigDecimal、ThreadLocal、ClassLoader & URLClassLoader、ArrayList & LinkedList、 HashMap & LinkedHashMap & TreeMap & CouncurrentHashMap、HashSet & LinkedHashSet & TreeSet
+String
+
+Integer
+
+Long
+
+Enum
+
+BigDecimal
+
+ThreadLocal、ClassLoader & URLClassLoader、
+
+ArrayList & LinkedList、
+
+HashMap & LinkedHashMap & TreeMap & CouncurrentHashMap、
+
+HashSet & LinkedHashSet & TreeSet
 
 ### Java并发编程
 
 #### 并发与并行
 
-什么是并发
-
-什么是并行
-
-并发与并行的区别
+什么是并发、什么是并行、并发与并行的区别
 
 #### 线程
 
@@ -258,7 +270,7 @@ String、Integer、Long、Enum、BigDecimal、ThreadLocal、ClassLoader & URLCla
 
 线程的实现
 
-线程的状态
+线程的声明周期
 
 优先级
 
@@ -268,9 +280,69 @@ String、Integer、Long、Enum、BigDecimal、ThreadLocal、ClassLoader & URLCla
 
 守护线程
 
+**Thread**
+
+- sleep()方法和wait方法的区别和共同点？
+
+**Runnable**
+
+**Callable与Future**
+
+- Runnable接口和Callable接口的区别
+
+**监视器**
+
+##### synchronized
+
+#### volatile
+
+- volatile的实现原理
+
+- happens-before、内存屏障、编译器指令重排和CPU指令重
+
+- volatile和原子性、可见性和有序性之间的关系
+
+- 有了symchronized为什么还需要volatile
+
+**final变量**
+
+**线程局部变量（ThreadLocal）**
+
+- TheadLoacl内存泄漏问题
+
+##### **ReentrantLock**
+
+- 锁测试与超时
+
+**读写锁ReentrantReadWriteLock**
+
+**ReentrantReadWriteLock**
+
+**阻塞队列**
+
+**死锁**
+
+**CAS**
+
+**AQS**
+
+**原子类、java.util.concurrent.atomic包**
+
+**线程安全集合**
+
+#### 执行器
+
+线程池、控制任务组、Fork-Join框架、可完成Future
+
+#### 同步器
+
+信号量、倒计时门栓、障栅、交换器、同步队列
+
+#### 锁
+
+​              锁优化、锁消除、锁粗化、自旋锁、可重入锁、阻塞锁、死锁
+
 #### 线程池
-
-
 
 自己设计线程池、submit() 和 execute()、线程池原理
 
@@ -279,48 +351,6 @@ String、Integer、Long、Enum、BigDecimal、ThreadLocal、ClassLoader & URLCla
 #### 线程安全
 
 死锁、死锁如何排查、线程安全和内存模型的关系
-
-#### 锁
-
-CAS、乐观锁与悲观锁、数据库相关锁机制、分布式锁、偏向锁、轻量级锁、重量级锁、monitor、
-
-锁优化、锁消除、锁粗化、自旋锁、可重入锁、阻塞锁、死锁
-
-#### 死锁
-
-死锁的原因
-
-死锁的解决办法
-
-#### synchronized
-
-synchronized是如何实现的？
-
-synchronized和lock之间关系、不使用synchronized如何实现一个线程安全的单例
-
-synchronized和原子性、可见性和有序性之间的关系
-
-#### volatile
-
-happens-before、内存屏障、编译器指令重排和CPU指令重
-
-volatile的实现原理
-
-volatile和原子性、可见性和有序性之间的关系
-
-有了symchronized为什么还需要volatile
-
-#### sleep 和 wait
-
-#### wait 和 notify
-
-#### notify 和 notifyAll
-
-#### ThreadLocal
-
-#### 写一个死锁的程序
-
-#### 写代码来解决生产者消费者问题
 
 ### 并发包
 
@@ -336,6 +366,8 @@ Thread、Runnable、Callable、ReentrantLock、ReentrantReadWriteLock、Atomic*�
 
 [运行时数据区：堆、栈、方法区、直接内存、运行时常量池](https://github.com/9pound/Accumulate/blob/master/jvm/Jvm%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.xmind)
 
+https://www.cnblogs.com/czwbig/p/11127124.html
+
 堆和栈区别
 
 Java中的对象一定在堆上分配吗？不一定（hotspot 的Class对象存放在方法区）
@@ -344,13 +376,15 @@ Java中的对象一定在堆上分配吗？不一定（hotspot 的Class对象存
 
 [对象的内存布局](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.xmind)
 
-#### 垃圾回收
-
 [对象的访问定位](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D.md)
+
+#### 垃圾回收
 
 如何判断对象死没死（引用计数、可达性分析）
 
-[垃圾收集算法：标记清除、引用计数、复制、标记压缩、分代回收、增量式回收](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95.xmind)
+[垃圾收集算法：标记清除、标记整理、复制算法、分代回收、标记压缩、增量式回收](https://github.com/9pound/Accumulate/blob/master/jvm/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95.xmind)
+
+stop the world（GC停顿）
 
 垃圾收集器（CMS、G1、ZGC、Epsilon）
 
@@ -541,6 +575,8 @@ Hibernate/Ibatis/MyBatis之间的区别
 
 [mapper接口和xml文件是如何关联的？接口中的方法和xml文件中的sql语句是如何关联的？不同XML文件中id是否可以重复？](https://github.com/9pound/Accumulate/blob/master/mybatis/mapper%E6%8E%A5%E5%8F%A3%E5%92%8Cxml%E6%96%87%E4%BB%B6%E6%98%AF%E5%A6%82%E4%BD%95%E5%85%B3%E8%81%94%E7%9A%84%EF%BC%9F%E6%8E%A5%E5%8F%A3%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8Cxml%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84sql%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%A6%82%E4%BD%95%E5%85%B3%E8%81%94%E7%9A%84%EF%BC%9F.md)
 
+接口中参数与Sql语句中的参数如何绑定
+
 [数据库表字段和Java类属性字段名不匹配如何解决？](https://github.com/9pound/Accumulate/blob/master/mybatis/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E5%92%8CJava%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%AD%97%E6%AE%B5%E5%90%8D%E4%B8%8D%E5%8C%B9%E9%85%8D%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F.md)
 
 #{}与${}的区别？
@@ -716,6 +752,26 @@ Feign 和 Ribbon+RestTemplate 的区别是什么？
 
 ### Spring Security
 
+### RabbitMQ
+
+什么是 rabbitmq、为什么要使用 rabbitmq、使用 rabbitmq 的场景、mq 的优缺点？
+
+如何确保消息正确地发送至 RabbitMQ？ 
+
+如何确保消息接收方消费了消息？
+
+如何避免消息重复投递或重复消费？
+
+消息基于什么传输？
+
+消息如何分发？
+
+消息怎么路由？
+
+如何确保消息不丢失？
+
+RabbitMQ 的集群
+
 ### 应用服务器知识
 
 #### JBoss
@@ -842,9 +898,33 @@ javap 、jad 、CRF
 
 #### 进程间通信
 
-#### 进程同步
+竞争条件
+
+临界区
 
 生产者消费者问题、哲学家就餐问题、读者写者问题
+
+信号量
+
+互斥量
+
+管程
+
+消息传递
+
+屏障
+
+#### 死锁
+
+死锁的条件
+
+鸵鸟算法
+
+死锁的检测与恢复
+
+死锁的避免、银行家算法
+
+死锁的预防
 
 #### 缓冲区溢出
 
@@ -858,13 +938,25 @@ javap 、jad 、CRF
 
 ### 数据库知识
 
-#### MySql 执行引擎
 
-#### MySQL 执行计划
 
-如何查看执行计划，如何根据执行计划进行SQL优化
+##### 连接
 
-#### 索引
+内连接，左连接，右连接
+
+#### MySQL
+
+##### MySql 执行引擎  
+
+##### MySQL 执行计划
+
+如何查看执行计划，如何根据执行计划进行SQL优化？
+
+一条SQL语句在MySQL中如何执行？
+
+一条SQL语句执行得很慢的原因有哪些？
+
+##### 索引
 
 Hash索引、B树索引（B+树、和B树、R树）
 
@@ -872,21 +964,21 @@ Hash索引、B树索引（B+树、和B树、R树）
 
 覆盖索引、最左前缀原则、索引下推
 
-#### SQL优化
+##### SQL优化
 
-#### 数据库事务和隔离级别
+##### 数据库事务和隔离级别
 
 事务的隔离级别、事务能不能实现锁的功能
 
-#### 数据库锁
+##### MVCC
 
-行锁、表锁、使用数据库锁实现乐观锁、
+##### 数据库锁
 
-#### 连接
+行锁、表锁、使用数据库锁实现乐观锁？
 
-内连接，左连接，右连接
+InnoDB锁算法
 
-#### 数据库主备搭建
+##### 数据库主备搭建
 
 #### binlog
 
@@ -900,27 +992,49 @@ h2
 
 #### 读写分离
 
-#### 常用的nosql数据库
+### NOSql数据库
 
-**redis**
+#### redis
 
-Redis是什么？ 与memcached有什么区别？
+Redis是什么？与memcached有什么区别？
 
 Redis的五种数据结构(STRING、LIST、SET、HASH、ZSET)及常用命令
 
-如何将数据存储到硬盘里面？快照、只追加文件
+一个字符串类型的值能存储最大容量是多少？512M
 
-主从复制特性（避免对主服务器进行集中式访问）
+Redis的事务特性和流水线特性  
 
-维护数据安全以及应对系统故障的方法
+Redis 是单进程单线程的？
 
-同时使用复制和持久化的好处和坏处？
+redis 过期键的删除策略？
 
-如何去选择适合自己的持久化选项和复制选项？
+Redis 的回收策略（淘汰策略）?
 
-Redis的事务特性和流水线特性
+Redis key 的过期时间和永久有效分别怎么设置？
+
+Redis如何做持久化的？快照、只追加文件
+
+Redis的同步机制了解么？主从复制特性（避免对主服务器进行集中式访问）
+
+同时使用复制和持久化的好处和坏处？如何去选择适合自己的持久化选项和复制选项？
+
+使用过 Redis 做异步队列么，你是怎么用的？
+
+使用过Redis分布式锁么，它是什么回事？
+
+维护数据安全以及应对系统故障的方法？
+
+假如 Redis 里面有 1 亿个 key，其中有 10w 个 key 是以某个固定的已知的前缀开头的，如果将它们全部找出来？
+
+如果有大量的 key 需要设置同一时间过期，一般需要注意什么？
+
+[参考](https://blog.csdn.net/Design407/article/details/103242874?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight)
+
+ElasticSearch
 
 
+
+[参考](https://zhuanlan.zhihu.com/p/102500311)
 
 #### 分别使用数据库锁、NoSql实现分布式锁
 

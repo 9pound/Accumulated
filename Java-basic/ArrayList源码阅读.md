@@ -90,6 +90,7 @@ public ArrayList(Collection<? extends E> c) {
         int oldCapacity = elementData.length;
         // 默认扩容为原来数组的1.5倍
         int newCapacity = oldCapacity + (oldCapacity >> 1);
+        // 如果实际元素的个数还是大于扩容后的数组
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
         if (newCapacity - MAX_ARRAY_SIZE > 0)
