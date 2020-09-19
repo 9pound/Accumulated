@@ -93,6 +93,7 @@ public ArrayList(Collection<? extends E> c) {
         // 如果实际元素的个数还是大于扩容后的数组
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
+        // 如果扩容后的数组大小大于数组的最大值
         if (newCapacity - MAX_ARRAY_SIZE > 0)
             newCapacity = hugeCapacity(minCapacity);
         // minCapacity is usually close to size, so this is a win:
