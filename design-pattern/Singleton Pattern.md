@@ -19,7 +19,7 @@
 
 **优点：**延迟实例化
 
-#### 经典单例模式
+#### 经典单例模式(懒汉式)
 
 线程不安全
 
@@ -38,7 +38,7 @@ public class Singleton() {
 
 
 
-#### 同步单例模式
+#### 同步单例模式（线程安全的懒汉式）
 
 问题：getinstance方法只有在第一次执行时，才需要真正的同步；同步一个方法可能造成程序执行效率下降100倍
 
@@ -55,21 +55,39 @@ public class Singleton() {
 }
 ```
 
-#### 急切单例模式
+#### 急切单例模式（饿汉式）
 
 - 线程安全
 
 - 不用同步
 
-```
+```java
 public class Singleton() {
 	private static Singleton uniqueInstance = new Singleton();;
 	private Singleton(){}
-	public static synchronized Singleton getInstance(){	
+	public static  Singleton getInstance(){	
 		return uniquInstance;
 	}
 }
 ```
+
+变种
+
+```java
+public class Singleton(){
+	private static Singleton;
+	static {
+		static = new Singleton;
+	}
+	pirvate Singeleton(){}
+	
+	private static Singleton() getInstance(){
+		return instance;
+	}
+}
+```
+
+
 
 #### 双重检查加锁单例模式
 
@@ -110,4 +128,35 @@ uniqueInstance = new Singleton();
 
 例如现在有2个线程A,B
 
-线程A在执行第5行代码时，B线程进来，而此时A执行了 1和3，没有执行2，此时B线程判断s不为null 直接返回一个未初始化的对象，就会出现问题
+##### 为什么使用volatile 修饰了singleton 引用还用synchronized 锁？
+
+##### 第一次检查singleton 为空后为什么内部还需要进行第二次检查？
+
+#### 
+
+#### 静态内部类式
+
+```java
+public class Singleton {
+	private static class SingletonHolder {
+		pirvate static final Singleton INSTANCE = new Singeleton();
+	}
+	private Singleton(){}
+	
+	public static final Singleton getInstance() {
+		return SingletonHolder.INSTANCE;
+	}
+}
+```
+
+#### 枚举式
+
+```
+public enum Singleton {
+	INSTANCE;
+	Singleton(){
+	
+	}
+}
+```
+
