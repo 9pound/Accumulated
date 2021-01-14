@@ -15,8 +15,6 @@ V call() throws Exception;
 
 用来保存异步计算的结果
 
-
-
 **FutureTask**
 
 ​	包装器类是一种非常便利的机制，可将Callable转换成Future和Runnable，它同时实现二者的接口。
