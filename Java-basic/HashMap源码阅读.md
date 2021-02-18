@@ -188,23 +188,32 @@ static final int hash(Object key) {
         Node<K,V>[] tab; 
         Node<K,V> first, e; 
         int n; K k;
+        // table不为空，且table中有只、对应key的Hash码的位置有值
         if ((tab = table) != null && (n = tab.length) > 0 &&
             (first = tab[(n - 1) & hash]) != null) {
+            // hash码相同，且可以相同直接返回
             if (first.hash == hash && // always check first node
                 ((k = first.key) == key || (key != null && key.equals(k))))
                 return first;
+            // hash码不同，或者hash码相同但是key不同
             if ((e = first.next) != null) {
+                // 遍历树或者链表，直到找到hash吗和key同时相同的Node节点，返回
                 if (first instanceof TreeNode)
                     return ((TreeNode<K,V>)first).getTreeNode(hash, key);
                 do {
+                   
                     if (e.hash == hash &&
                         ((k = e.key) == key || (key != null && key.equals(k))))
                         return e;
                 } while ((e = e.next) != null);
             }
         }
+        // 没找到就返回空2
         return null;
     }
+
+// 不同的key可能会有相同的hash码
+// 不同的hash码可能会被散列到同一个位置
 ```
 
 
