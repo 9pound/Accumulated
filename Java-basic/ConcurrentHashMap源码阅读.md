@@ -345,3 +345,19 @@ final Node<K,V>[] helpTransfer(Node<K,V>[] tab, Node<K,V> f) {
     return table;
 }
 ```
+
+# FAQ
+
+ConcurrentHashMap 和 HashTable 有什么区别？
+
+说下它 1.7 和 1.8 的实现是什么？有什么区别？为什么要这么做？
+
+为什么说 ConcurrentHashMap 是线程安全的？
+
+它的 get 操作是有锁的吗？
+
+它是强一致性的吗？它为什么是弱一致性的？
+
+ConcurrentHashMap 1.7 和 1.8 是如何扩容的？
+
+**sizeCtl** 参数是干什么的，讲讲变换过程？
