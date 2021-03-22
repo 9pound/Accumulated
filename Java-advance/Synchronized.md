@@ -37,12 +37,6 @@ monitor 对象存在于对象头中
 - 试图获取锁时不能设定超时
 - 每个锁仅有单一的条件
 
-
-
-
-
-
-
 #### 条件对象
 
 **wait（）**添加线程到等待集
@@ -60,7 +54,12 @@ monitor 对象存在于对象头中
 
 
 
+#### 锁的四种状态（对应MarkWord结构）
 
+- 无锁状态
+- 偏向锁状态
+- 轻量级锁状态
+- 重量级锁状态
 
 # FAQ
 
@@ -80,24 +79,41 @@ monitor 对象存在于对象头中
 
 #### 双重校验锁实现单例模式？
 
+#### synchronized与volatile的区别？
+
 #### synchronized和Reentrantlock之间的区别？
 
-都是可重入锁
+- 都是可重入锁
 
-实现方式不同 synchronized 依赖于jvm，Reentrantlock依赖于API
-
+- 实现方式不同 synchronized 依赖于jvm，Reentrantlock依赖于API
 
 
 #### 不使用synchronized如何实现一个线程安全的单例？
 
-#### synchronized和原子性、可见性和有序性之间的关系？
+饿汉模式
+
+
+
+#### synchronized如何实现原子性？
+
+#### synchronized如何实现可见性？
+
+#### synchronized如何实现有序性？
 
 #### Synchronized锁优化？
 
 #### synchronized 锁状态怎么从无锁状态到偏向锁的吗？
 
-#### 偏向锁撤销怎么到轻量级锁的？
+#### 偏向锁撤销升级到轻量级锁的？
 
-#### 还有轻量级锁什么时候会变成重量级锁？
+#### 轻量级锁什么时候膨胀为重量级锁？
+
+
+
+
 
 https://blog.csdn.net/guyuealian/article/details/52525724
+
+https://blog.csdn.net/xueba8/article/details/88753443
+
+https://blog.csdn.net/zhengwangzw/article/details/105141484
