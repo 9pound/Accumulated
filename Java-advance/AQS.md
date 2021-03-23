@@ -6,7 +6,9 @@ AQS是一个构建锁和同步器的框架，它定义了多线程的环境下�
 
 独占（ReentrantLock）
 
-共享 （ReentrantReadWriteLock、Semaphore、CountDownLatch）
+​	分公平和非公平
+
+共享 （ReentrantReadWriteLock、Semaphore、CountDownLatch、CyclicBarrier、ReadWriteLock）
 
 #### 源码
 
