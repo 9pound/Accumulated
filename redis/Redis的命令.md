@@ -152,7 +152,35 @@ HGETALL user:1000
 - 使用有序集合，你可以非常快地（**O(log(N))**）完成添加，删除和更新元素的操作。 因为元素是在插入时就排好序的，所以很快地通过评分(score)或者 位次(position)获得一个范围的元素。
 -  访问有序集合的中间元素同样也是非常快的，你可以轻易地访问任何你需要的东西: 有序的元素，快速的存在性测试，快速访问集合中间元素！ 
 
-### **Bitmaps 和 HyperLogLogs**
+### Bitmaps
+
+- Bitmaps本身不是一种数据结构，它是字符串，但是它可以对字符串的位进行操作。
+- bitmaps的最大长度是512MB，即2^32个比特位。
+
+```
+Bitmaps —
+Bitmaps are not an actual data type, but a set of bit-oriented operations defined on the String type. Since strings are binarysafe blobs and their maximum length is 512 MB, they are suitable to set up to 232 different bits.
+Bit operations are divided into two groups: constant-time single bit operations , like setting a bit to 1 or 0, or getting its value,and operations on groups of bits, for example counting the number of set bits in a given range of bits(e.g.. populationcounting).
+One of the biggest advantages of bitmaps is that they often provide extreme space savings when storing information.Forexample in a system where different users are represented by incremental user IDs, it is possible to remember a single bitinformation (for example, knowing whether a user wants to receive a newsletter) of 4 billion of users using just 512 MB ofmemory.
+```
+
+命令
+
+|          |      |
+| -------- | ---- |
+| setbit   |      |
+| getbit   |      |
+| BITOP    |      |
+| BITCOUNT |      |
+| BITPos   |      |
+
+1.BITOP performs bit-wise operations between different strings. The provided operations are AND, OR, XOR and NOT.
+
+2.BITCOUNT performs population counting, reporting the number of bits set to 1.
+
+3.BITPos finds the first bit having the specified value of 0 or 1.
+
+### **HyperLogLogs**
 
 Redis 同样支持 Bitmaps 和 HyperLogLogs 数据类型，实际上是基于字符串的基本类型的数据类型，但有自己的语义。
 
@@ -174,7 +202,13 @@ Redis 同样支持 Bitmaps 和 HyperLogLogs 数据类型，实际上是基于字
 |                     |                     |      |
 | XRANGE 和 XREVRANGE | XRANGE mystream - + |      |
 
+### GEO
 
+
+
+
+
+[Redis学习笔记(七)：redis高级数据类型及应用场景-Bitmaps、HyperLogLog、GEO - 程序员大本营 (pianshen.com)](https://www.pianshen.com/article/47161453425/)
 
 ### 总结：
 
@@ -212,7 +246,7 @@ Redis 同样支持 Bitmaps 和 HyperLogLogs 数据类型，实际上是基于字
 
 
 
-
+### 
 
 
 

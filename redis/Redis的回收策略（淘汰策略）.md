@@ -1,9 +1,9 @@
 ## Redis的回收策略（淘汰策略）
 
-- volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰
+- volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰（在设置过期时间的键中，采用删除最近最少使用原则删除）
 - volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰
 - volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰
-- allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰
+- allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰（幂律访问模式）
 - allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰
 - no-enviction（驱逐）：禁止驱逐数据
 
@@ -13,4 +13,4 @@
 
 （1）如果数据呈现幂律分布，也就是一部分数据访问频率高，一部分数据访问频率低，则使用 allkeys-lru
 
-（2）如果数据呈现平等分布，也就是所有的数据访问频率都相同，则使用allkeys-random
+（2）如果数据呈现平等分布，也就是所有的数据访问频率都相同，则使用allkeys-random                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
